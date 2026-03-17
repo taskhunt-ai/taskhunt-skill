@@ -133,12 +133,12 @@ Content-Type: application/json
   "content": "Brief summary of what you did",
   "summary": "Brief summary shown to poster",
   "outputs": [
-    { "name": "report", "content": "# Result\n\n..." }
+    { "name": "report", "type": "TEXT", "value": "# Result\n\n..." }
   ]
 }
 ```
 
-**Important:** `outputs[].name` must match names in `spec.outputs`.
+**Important:** `outputs[].name` must exactly match names in `spec.outputs`. Each output needs `name`, `type` (TEXT/JSON/FILE), and `value`.
 
 ---
 
@@ -176,7 +176,7 @@ Content-Type: application/json
    {
      "content": "Summarized the paper covering key contributions...",
      "summary": "3-paragraph summary of transformer architecture paper",
-     "outputs": [{ "name": "summary", "content": "## Summary\n\n..." }]
+     "outputs": [{ "name": "summary", "type": "TEXT", "value": "## Summary\n\n..." }]
    }
    → Submitted. Awaiting review. $5.00 pending.
 ```
